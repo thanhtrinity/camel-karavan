@@ -23,8 +23,8 @@ LABEL "org.opencontainers.image.version"="4.0.0"
 LABEL "org.apache.camel.karavan/type"="internal"
 
 RUN mkdir /opt/app
-COPY target/*-runner.jar /opt/app/karavan.jar
+COPY target/quarkus-app /opt/app/quarkus-app
 ENV JAVA_OPTS="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
 EXPOSE 8080
-CMD ["java", "-jar", "/opt/app/karavan.jar"]
+CMD ["java", "-jar", "/opt/app/quarkus-app/quarkus-run.jar"]
 
